@@ -23,14 +23,16 @@ class _BaseScreenState extends State<BaseScreen> {
     ];
     final _kBottmonNavBarItems = <BottomNavigationBarItem>[
       BottomNavigationBarItem(
-        icon: Icon(Icons.home),
+        icon: Icon(
+          Icons.home,
+        ),
         title: Text('Accueil'),
       ),
       BottomNavigationBarItem(
           icon: Icon(Icons.favorite_border), title: Text('Favoris')),
       BottomNavigationBarItem(
-        icon: Icon(Icons.event),
-        title: Text('Evénément'),
+        icon: Icon(Icons.add_to_home_screen),
+        title: Text('Publier'),
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.person_outline),
@@ -40,13 +42,11 @@ class _BaseScreenState extends State<BaseScreen> {
     assert(_kTabPages.length == _kBottmonNavBarItems.length);
     final bottomNavBar = BottomNavigationBar(
       backgroundColor: Colors.white,
-      elevation: 10,
+      elevation: 7,
       items: _kBottmonNavBarItems,
-      selectedIconTheme: Theme.of(context).accentIconTheme,
-      selectedItemColor: Theme.of(context).accentColor,
       selectedLabelStyle:
-          TextStyle(fontSize: 16.5, fontWeight: FontWeight.bold),
-      unselectedLabelStyle: TextStyle(fontSize: 14),
+          TextStyle(fontSize: 14.5, fontWeight: FontWeight.bold),
+      unselectedLabelStyle: TextStyle(fontSize: 12),
       currentIndex: _currentTabIndex,
       type: BottomNavigationBarType.fixed,
       onTap: (int index) {

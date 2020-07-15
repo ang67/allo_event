@@ -1,4 +1,6 @@
+import 'package:allo_event/views/about/about.dart';
 import 'package:allo_event/views/base.dart';
+import 'package:allo_event/views/help/help.dart';
 import 'package:allo_event/views/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -22,6 +24,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => BaseScreen(),
+        '/help': (context) => HelpScreen(),
+        '/about': (context) => AboutAppPage(),
 
         //
       },

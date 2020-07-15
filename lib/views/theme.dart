@@ -8,6 +8,7 @@ ThemeData buildBaseTheme() {
       primaryColor: Colors.orange[900],
       accentColor: Colors.blue[300],
       fontFamily: null,
+      accentIconTheme: IconThemeData(color: Colors.orange[900]),
       textTheme: TextTheme(
 
           // headline1: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.black87),
