@@ -10,13 +10,13 @@ ThemeData buildBaseTheme() {
       fontFamily: null,
       accentIconTheme: IconThemeData(color: Colors.orange[900]),
       textTheme: TextTheme(
-
-          // headline1: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.black87),
-          // headline2: TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold, color: Colors.black87),
-          // bodyText1: TextStyle(fontSize: 17.0, color: Colors.black54),
-          // bodyText2: TextStyle(fontSize: 12.0, color: Colors.black54),
-
-          )
+        headline1: TextStyle(
+            fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.black87),
+        headline2: TextStyle(
+            fontSize: 17.0, fontWeight: FontWeight.bold, color: Colors.black87),
+        bodyText1: TextStyle(fontSize: 17.0, color: Colors.black54),
+        bodyText2: TextStyle(fontSize: 12.0, color: Colors.black54),
+      )
       // Define the default TextTheme. Use this to specify the default
       // text styling for headlines, titles, bodies of text, and more.
 
