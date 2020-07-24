@@ -52,22 +52,22 @@ class _HomePageState extends State<HomePage> {
             }),
           ],
         ),
-        body: Container(
-          child: Center(
+        body: ListView(children: <Widget>[
+          Container(
             child: Column(
               children: <Widget>[
-                SizedBox(height: 35),
+                SizedBox(height: 30),
                 SearchField(),
-                SizedBox(height: 20),
+                SizedBox(height: 30),
+                Text('Quel évènement organisez-vous ?',
+                    style: Theme.of(context).textTheme.headline2),
+                SizedBox(height: 10),
                 FutureBuilder<List<Event>>(
                   future: futureEvents,
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
                       List<Event> events = snapshot.data;
-                      events.forEach((element) {
-                        print(element.toJson());
-                      });
-                      print(events[0].id);
+
                       return SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Container(
@@ -79,9 +79,12 @@ class _HomePageState extends State<HomePage> {
                     return CircularProgressIndicator();
                   },
                 ),
+                SizedBox(height: 20),
+                Text('Offres promotionnelles !',
+                    style: Theme.of(context).textTheme.headline2),
               ],
             ),
           ),
-        ));
+        ]));
   }
 }

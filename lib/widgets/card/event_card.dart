@@ -1,3 +1,4 @@
+import 'package:allo_event/views/services/services_view.dart';
 import 'package:flutter/material.dart';
 
 class EventCard extends StatefulWidget {
@@ -22,22 +23,34 @@ class _EventCardState extends State<EventCard> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return MaterialButton(
       padding: EdgeInsets.all(5),
-      child: ClipRRect(
-        borderRadius: BorderRadius.all(
-          Radius.circular(10.0),
+      elevation: 2.0,
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return ServicesView(id: widget.id, title: widget.eventName);
+            },
+          ),
+        );
+      },
+      child: Container(
+        height: 150.0,
+        width: 200.0,
+        decoration: BoxDecoration(
+          boxShadow: <BoxShadow>[
+            BoxShadow(color: Colors.grey[400], blurRadius: 3)
+          ],
+          image: DecorationImage(
+            image: AssetImage(widget.imagePath),
+            fit: BoxFit.cover,
+          ),
+          borderRadius: BorderRadius.circular(12),
         ),
         child: Stack(
           children: <Widget>[
-            Container(
-              height: 150.0,
-              width: 200.0,
-              child: Image(
-                image: AssetImage(widget.imagePath),
-                fit: BoxFit.cover,
-              ),
-            ),
             Positioned(
               left: 0.0,
               top: 100.0,
@@ -48,7 +61,10 @@ class _EventCardState extends State<EventCard> {
                     gradient: LinearGradient(
                         begin: Alignment.bottomCenter,
                         end: Alignment.topCenter,
-                        colors: [Colors.black, Colors.black12])),
+                        colors: [Colors.black, Colors.black12]),
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(12),
+                        bottomRight: Radius.circular(12))),
               ),
             ),
             Positioned(
@@ -73,7 +89,7 @@ class _EventCardState extends State<EventCard> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
-                      Text("${widget.numberOfItems} Services",
+                      Text("${widget.numberOfItems} services",
                           style: TextStyle(color: Colors.grey))
                     ],
                   ),

@@ -1,4 +1,4 @@
-final EVENTDATA = [
+const EVENTDATA = [
   {
     "id": 1,
     "eventName": "Mariage",
@@ -31,7 +31,7 @@ final EVENTDATA = [
   },
   {
     "id": 6,
-    "eventName": "Autres",
+    "eventName": "Autre",
     "numberOfItems": 20,
     "imagePath": "assets/images/events/autre.jpg",
   },
