@@ -31,7 +31,11 @@ class _EventCardState extends State<EventCard> {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return ServicesView(id: widget.id, title: widget.eventName);
+              return ServicesView(
+                id: widget.id,
+                title: widget.eventName,
+                numberOfItems: widget.numberOfItems,
+              );
             },
           ),
         );

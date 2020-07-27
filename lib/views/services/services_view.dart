@@ -1,9 +1,13 @@
+import 'package:allo_event/data/event_data.dart';
+import 'package:allo_event/widgets/expanded_list/entry_item.dart';
 import 'package:flutter/material.dart';
 
 class ServicesView extends StatefulWidget {
   final int id;
   final String title;
-  const ServicesView({Key key, @required this.id, this.title})
+  final int numberOfItems;
+  const ServicesView(
+      {Key key, @required this.id, this.title, this.numberOfItems})
       : super(key: key);
   @override
   _ServicesViewState createState() => _ServicesViewState();
@@ -13,11 +17,15 @@ class _ServicesViewState extends State<ServicesView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('Services ${widget.title}')), body: Body());
+        appBar: AppBar(title: Text('Services ${widget.title}')),
+        body: Body(count: widget.numberOfItems));
   }
 }
 
 class Body extends StatefulWidget {
+  final int count;
+
+  const Body({Key key, this.count}) : super(key: key);
   @override
   _BodyState createState() => _BodyState();
 }
@@ -32,7 +40,7 @@ class _BodyState extends State<Body> {
             Image(
               width: 50,
               height: 50,
-              image: AssetImage('assets/images/events/robot_assistant.png'),
+              image: AssetImage('assets/icons/robot_assistant.png'),
               fit: BoxFit.cover,
             ),
             const Text("Hey ! Je m'appelle Marthe",
@@ -66,9 +74,11 @@ class _BodyState extends State<Body> {
 
   @override
   Widget build(BuildContext context) {
-    Future.delayed(Duration.zero, () => showAlert(context));
-    return Container(
-      child: Center(child: Text("Hello world")),
+    //Future.delayed(Duration.zero, () => showAlert(context));
+    return ListView.builder(
+      itemBuilder: (BuildContext context, int index) =>
+          EntryItem(servicesDtypeDATA[index]),
+      itemCount: servicesDtypeDATA.length,
     );
   }
 }
