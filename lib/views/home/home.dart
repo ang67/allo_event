@@ -1,4 +1,4 @@
-import 'package:allo_event/data/event_data.dart';
+import 'package:allo_event/data/events_data.dart';
 import 'package:allo_event/models/event_model.dart';
 import 'package:allo_event/utils/ui_constantes.dart';
 import 'package:allo_event/widgets/card/list_event_card.dart';

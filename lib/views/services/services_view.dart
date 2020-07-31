@@ -1,4 +1,4 @@
-import 'package:allo_event/data/event_data.dart';
+import 'package:allo_event/data/services_data.dart';
 import 'package:allo_event/widgets/expanded_list/entry_item.dart';
 import 'package:flutter/material.dart';
 
@@ -18,14 +18,14 @@ class _ServicesViewState extends State<ServicesView> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(title: Text('Services ${widget.title}')),
-        body: Body(count: widget.numberOfItems));
+        body: Body(id: widget.id));
   }
 }
 
 class Body extends StatefulWidget {
-  final int count;
+  final int id;
 
-  const Body({Key key, this.count}) : super(key: key);
+  const Body({Key key, this.id}) : super(key: key);
   @override
   _BodyState createState() => _BodyState();
 }
@@ -77,8 +77,8 @@ class _BodyState extends State<Body> {
     //Future.delayed(Duration.zero, () => showAlert(context));
     return ListView.builder(
       itemBuilder: (BuildContext context, int index) =>
-          EntryItem(servicesDtypeDATA[index]),
-      itemCount: servicesDtypeDATA.length,
+          EntryItem(servicesDtypeDATA[widget.id][index]),
+      itemCount: servicesDtypeDATA[widget.id].length,
     );
   }
 }
