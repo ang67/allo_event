@@ -1,3 +1,4 @@
+import 'package:allo_event/widgets/offer/offer_item.dart';
 import 'package:flutter/material.dart';
 
 class OffersView extends StatefulWidget {
@@ -13,7 +14,31 @@ class _OffersViewState extends State<OffersView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text(widget.typeService)),
-        body: Center(child: Text(widget.typeService)));
+      body: CustomScrollView(slivers: <Widget>[
+        SliverAppBar(
+          title: Text('${widget.typeService}'),
+          floating: true,
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.tune),
+              onPressed: () {},
+            )
+          ],
+        ),
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+            // The builder function returns a ListTile with a title that
+            // displays the index of the current item.
+            (context, i) {
+              if (i.isOdd) return Divider();
+              final index = i ~/ 2 + 1;
+              return OfferItemView();
+            },
+            // Builds 1000 ListTiles
+            childCount: 10 * 2,
+          ),
+        )
+      ]),
+    );
   }
 }
