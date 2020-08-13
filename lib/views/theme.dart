@@ -6,7 +6,7 @@ ThemeData buildBaseTheme() {
   final ThemeData base = ThemeData(
       brightness: Brightness.light,
       primaryColor: Colors.orange[900],
-      accentColor: Colors.green,
+      accentColor: Colors.greenAccent[700],
       fontFamily: null,
       accentIconTheme: IconThemeData(color: Colors.orange[900]),
       textTheme: TextTheme(

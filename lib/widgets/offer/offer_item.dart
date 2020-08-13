@@ -13,6 +13,8 @@ class _OfferItemViewState extends State<OfferItemView> {
   bool addFavorite = true;
   @override
   Widget build(BuildContext context) {
+    String description =
+        "Vêtu d'un bleu indescriptible. Salut à vous ; pourquoi n'auriez-vous pas un gigot au fond de mon être, et nul ne pourra pénétrer jusqu'à la boîte à musique, à vide.Vêtu d'un bleu indescriptible. Salut à vous ; pourquoi n'auriez-vous pas un gigot au fond de mon être, et nul ne pourra pénétrer jusqu'à la boîte à musique, à videVêtu d'un bleu indescriptible. Salut à vous ; pourquoi n'auriez-vous pas un gigot au fond de mon être, et nul ne pourra pénétrer jusqu'à la boîte à musique, à vide.";
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       child: Column(
@@ -134,8 +136,7 @@ class _OfferItemViewState extends State<OfferItemView> {
                 text: null,
                 children: <TextSpan>[
                   TextSpan(
-                    text:
-                        "Vêtu d'un bleu indescriptible. Salut à vous ; pourquoi n'auriez-vous pas un gigot au fond de mon être, et nul ne pourra pénétrer jusqu'à la boîte à musique, à vide.Vêtu d'un bleu indescriptible. Salut à vous ; pourquoi n'auriez-vous pas un gigot au fond de mon être, et nul ne pourra pénétrer jusqu'à la boîte à musique, à videVêtu d'un bleu indescriptible. Salut à vous ; pourquoi n'auriez-vous pas un gigot au fond de mon être, et nul ne pourra pénétrer jusqu'à la boîte à musique, à vide.",
+                    text: description.substring(0, 260) + '...  ',
                     style: Theme.of(context).textTheme.bodyText2,
                   ),
                   TextSpan(

@@ -1,3 +1,4 @@
+import 'package:allo_event/widgets/card/rating_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
@@ -19,6 +20,9 @@ class _OfferDetailsViewState extends State<OfferDetailsView> {
   ];
   @override
   Widget build(BuildContext context) {
+    String description =
+        "Vêtu d'un bleu indescriptible. Salut à vous ; pourquoi n'auriez-vous pas un gigot au fond de mon être, et nul ne pourra pénétrer jusqu'à la boîte à musique, à vide.Vêtu d'un bleu indescriptible. Salut à vous ; pourquoi n'auriez-vous pas un gigot au fond de mon être, et nul ne pourra pénétrer jusqu'à la boîte à musique, à videVêtu d'un bleu indescriptible. Salut à vous ; pourquoi n'auriez-vous pas un gigot au fond de mon être, et nul ne pourra pénétrer jusqu'à la boîte à musique, à vide.";
+
     return Scaffold(
       appBar: AppBar(title: Text('Détails')),
       body: Container(
@@ -55,39 +59,37 @@ class _OfferDetailsViewState extends State<OfferDetailsView> {
             SizedBox(height: 10),
             Text('Description', style: Theme.of(context).textTheme.headline2),
             SizedBox(height: 5),
-            RichText(
+            Text(
+              description,
               textAlign: TextAlign.justify,
-              overflow: TextOverflow.ellipsis,
-              maxLines: 10,
-              text: TextSpan(
-                text: null,
-                children: <TextSpan>[
-                  TextSpan(
-                    text:
-                        "Vêtu d'un bleu indescriptible. Salut à vous ; pourquoi n'auriez-vous pas un gigot au fond de mon être, et nul ne pourra pénétrer jusqu'à la boîte à musique, à vide.Vêtu d'un bleu indescriptible. Salut à vous ; pourquoi n'auriez-vous pas un gigot au fond de mon être, et nul ne pourra pénétrer jusqu'à la boîte à musique, à videVêtu d'un bleu indescriptible. Salut à vous ; pourquoi n'auriez-vous pas un gigot au fond de mon être, et nul ne pourra pénétrer jusqu'à la boîte à musique, à vide.",
-                    style: Theme.of(context).textTheme.bodyText2,
-                  ),
-                ],
-              ),
+              style: Theme.of(context).textTheme.bodyText2,
             ),
 
             SizedBox(height: 15),
             Center(
               child: RaisedButton(
                   color: Theme.of(context).accentColor,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return null;
+                    }));
+                  },
                   child: Text("Contacter le prestataire")),
             ),
             SizedBox(height: 15),
-            Center(
-              child: Text('Avis', style: Theme.of(context).textTheme.headline1),
+            Divider(
+              indent: 15,
+              endIndent: 15,
             ),
-            //avis rating...
-            SizedBox(height: 200),
             Center(
-              child: Text('Commentaires',
+              child: Text('Avis et Commentaires',
                   style: Theme.of(context).textTheme.headline1),
             ),
+            SizedBox(height: 10),
+            //avis rating...
+            RatingCard(),
+
             SizedBox(height: 80)
             // list des commentaires...
           ],

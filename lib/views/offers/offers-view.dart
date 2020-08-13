@@ -32,7 +32,7 @@ class _OffersViewState extends State<OffersView> {
             (context, i) {
               if (i.isOdd) return Divider();
               final index = i ~/ 2 + 1;
-              return OfferItemView(name: 'TSnono Pro ${index}');
+              return OfferItemView(name: 'TSnono Pro $index');
             },
             // Builds 1000 ListTiles
             childCount: 10 * 2,
