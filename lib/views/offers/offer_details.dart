@@ -1,3 +1,4 @@
+import 'package:allo_event/widgets/card/comment_card.dart';
 import 'package:allo_event/widgets/card/rating_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
@@ -69,12 +70,7 @@ class _OfferDetailsViewState extends State<OfferDetailsView> {
             Center(
               child: RaisedButton(
                   color: Theme.of(context).accentColor,
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return null;
-                    }));
-                  },
+                  onPressed: () {},
                   child: Text("Contacter le prestataire")),
             ),
             SizedBox(height: 15),
@@ -90,8 +86,16 @@ class _OfferDetailsViewState extends State<OfferDetailsView> {
             //avis rating...
             RatingCard(),
 
-            SizedBox(height: 80)
-            // list des commentaires...
+            SizedBox(height: 25),
+            Column(
+              children: <Widget>[
+                CommentCard(),
+                CommentCard(),
+                CommentCard(),
+                CommentCard(),
+                CommentCard(),
+              ],
+            ),
           ],
         ),
       ),
