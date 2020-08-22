@@ -1,3 +1,4 @@
+import 'package:allo_event/views/offers/contact/write_to_service_provider.dart';
 import 'package:allo_event/views/offers/offer_details.dart';
 import 'package:flutter/material.dart';
 
@@ -154,7 +155,16 @@ class _OfferItemViewState extends State<OfferItemView> {
           Center(
             child: RaisedButton(
                 color: Theme.of(context).accentColor,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return WriteToServiceProvider(name: widget.name);
+                      },
+                    ),
+                  );
+                },
                 child: Text("Contacter le prestataire")),
           )
         ],

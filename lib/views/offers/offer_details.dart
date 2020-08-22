@@ -1,6 +1,8 @@
 import 'package:allo_event/data/offerts_data.dart';
+import 'package:allo_event/views/offers/contact/write_to_service_provider.dart';
 import 'package:allo_event/widgets/card/comment_card.dart';
 import 'package:allo_event/widgets/card/rating_card.dart';
+import 'package:allo_event/widgets/map/location.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
@@ -161,7 +163,16 @@ class _OfferDetailsViewState extends State<OfferDetailsView> {
                 children: [
                   RaisedButton(
                       color: Theme.of(context).accentColor,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return WriteToServiceProvider(name: widget.name);
+                            },
+                          ),
+                        );
+                      },
                       child: Text("Contacter le prestataire")),
                   IconButton(
                     color: Theme.of(context).accentColor,
@@ -268,6 +279,12 @@ class _OfferDetailsViewState extends State<OfferDetailsView> {
                 CommentCard(),
               ],
             ),
+            Divider(),
+            SizedBox(height: 10),
+            Text("Yopougon Figayo, en face de poisson d'Afrique"),
+            SizedBox(height: 10),
+            Location(),
+            SizedBox(height: 10),
           ],
         ),
       ),
